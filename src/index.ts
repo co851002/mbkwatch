@@ -1,4 +1,7 @@
 import './sass/main.scss';
+import './adserver/adserver.js';
+import './adserver/localServer.js';
+
 
 class Greeter {
     greeting: string;
