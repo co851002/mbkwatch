@@ -1,5 +1,5 @@
 {
-  "name": "vm-project-structure",
+  "name": "mbkboilerplate",
   "version": "1.0.0",
   "description": "A complete project structure using: Webpack, TypeScript, Pug and Sass",
   "author": "Christo Oosthuizen",
