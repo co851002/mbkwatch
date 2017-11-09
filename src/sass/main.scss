@@ -1,40 +1,80 @@
-// We load the CSS using the ITCSS approach.
-// This helps organizing the project in order to better deal with CSS specificities.
-
-// All SASS variables goes here.
-// No CSS output.
-// @import 'settings/*';
-
-// All SASS mixins and functions goes here.
-// No CSS output.
-// @import 'tools/*';
-
-// Reset and/or normalize styles, box-sizing definition, etc.
-// This is the first layer which outputs CSS.
 @import 'generic/*';
 
-// Styling for bare HTML elements (like H1, A, etc.).
-// Used only for generic browser overrides.
-// @import 'elements/*';
+html {
+  background: #018DED;
+  background-size: cover;
+  font-family: 'helvetica neue';
+  text-align: center;
+  font-size: 10px;
 
-// Class-based selectors which define undecorated design patterns,
-// for example media object known from OOCSS.
-// @import 'objects/*';
+  body {
+    margin: 0;
+    font-size: 2rem;
+    display: flex;
+    flex: 1;
+    min-height: 100vh;
+    align-items: center;
 
-// Specific UI components (this is where the majority of the styles takes place).
-// UI components are often composed of Objects and Components.
-// @import 'components/*';
+    .clock {
+      width: 30rem;
+      height: 30rem;
+      border: 2px solid white;
+      border-radius: 50%;
+      margin: 0 auto;
+      position: relative;
+      box-shadow: 0 0 0 4px rgba(0,0,0,0.1), inset 0 0 0 3px #EFEFEF, inset 0 0 10px black, 0 0 10px rgba(0,0,0,0.2);
 
-// Theme overrides
-// @import 'theme/*';
+      .clock-face {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transform: translateY(-2px);
+        /* account for the height of the clock hands */
+        .hand {
+          width: 45%;
+          height: 2px;
+          background: #fff;
+          position: absolute;
+          top: 50%;
+          left: 5%;
+          transform-origin: 100%;
+          transform: rotate(90deg);
+          transition: all 0.05s;
+          transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
 
-// Utilities and helper classes with ability to override anything that comes before.
-// These classes should be named starting with an underscore (eg. ._hide).
-// and usually uses !important in their attributes.
-// @import 'trumps/*';
-body{
-  color:red;
-  p{
-    color:green;
+          &.hour-hand {
+            width: 30%;
+            left: 20%;
+            transform: rotate(90deg);
+
+          }
+
+          &.min-hand {
+            width: 40%;
+            left: 10%;
+            transform: rotate(90deg);
+          }
+        }
+        .date{
+          width: 25px;
+          background: #fff;
+          font-size: 18px;
+          position: absolute;
+          left: 20%;
+          top: 45%;
+          letter-spacing: 1px;
+        }
+        .digital {
+          top:80%;
+          position: absolute;
+          width: 100%;
+          text-align: center;
+          color: #fff;
+          font-weight: 100;
+          font-size: 18px;
+          letter-spacing: 1px;
+        }
+      }
+    }
   }
 }
