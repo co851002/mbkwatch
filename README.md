@@ -1,5 +1,3 @@
-# Boilerplate
-
 ## Instructions
 
 ### clone and set directory
